@@ -1,0 +1,141 @@
+# 🧱 Azure Infrastructure Deployment with Terraform
+
+![Azure](https://img.shields.io/badge/Azure-Cloud-blue)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)
+![IaaS](https://img.shields.io/badge/IaaS-Infrastructure-green)
+
+> 💡 Provision a complete Azure infrastructure using Infrastructure as Code (Terraform)
+
+---
+
+## 🧠 Overview
+
+This project demonstrates how to deploy a complete infrastructure in Microsoft Azure using **Terraform**, following Infrastructure-as-Code (IaC) principles.
+
+It simulates a real-world scenario where infrastructure must be reproducible, automated, and version-controlled.
+
+**Technologies used:**
+
+* Terraform
+* Microsoft Azure
+* Azure Resource Manager
+
+---
+
+## 🎯 Objective
+
+The goal of this project is to:
+
+* Provision infrastructure using Terraform
+* Apply Infrastructure-as-Code principles
+* Create reproducible and automated deployments
+* Simulate real-world cloud environments
+
+---
+
+## 🏗️ Architecture
+
+```
+[Resource Group]
+        ↓
+[Virtual Network (10.0.0.0/16)]
+        ↓
+[Subnet (10.0.1.0/24)]
+        ↓
+[Network Security Group (SSH)]
+        ↓
+[Network Interface]
+        ↓
+[Public IP (Static)]
+        ↓
+[Linux Virtual Machine (Ubuntu)]
+```
+
+---
+
+## ⚙️ Key Components
+
+The deployment includes:
+
+* **Resource Group** → logical container
+* **Virtual Network & Subnet** → network isolation
+* **Network Security Group (NSG)** → controls inbound traffic (SSH allowed)
+* **Public IP (Static, Standard SKU)** → external access
+* **Network Interface (NIC)** → connectivity
+* **Linux Virtual Machine (Ubuntu 22.04)** → compute resource
+
+---
+
+## 🧩 How It Works
+
+The Terraform configuration:
+
+1. Defines Azure provider
+2. Creates networking resources (VNet, Subnet)
+3. Applies security rules via NSG
+4. Provisions public IP and network interface
+5. Deploys a Linux virtual machine
+6. Outputs the public IP for access
+
+---
+
+## 🔄 Deployment Workflow
+
+```bash
+terraform init
+terraform plan
+terraform apply
+```
+
+---
+
+## 📤 Outputs
+
+After deployment, Terraform returns:
+
+* Public IP address of the virtual machine
+
+---
+
+## 🔐 Security Considerations
+
+* SSH (port 22) is allowed for access
+* Password authentication is enabled (for demo purposes)
+* In production:
+
+  * Use SSH keys
+  * Restrict NSG access by IP
+
+---
+
+## 🌍 Real-World Use Case
+
+This project represents:
+
+* Infrastructure provisioning in cloud environments
+* Automated environment setup for development/testing
+* Baseline for scalable infrastructure deployments
+* Foundation for DevOps workflows
+
+---
+
+## 🚀 Future Improvements
+
+* Use SSH keys instead of passwords
+* Add NSG rules with restricted access
+* Implement remote backend (Azure Storage for state)
+* Create reusable Terraform modules
+* Integrate with CI/CD pipelines
+
+---
+
+## 📌 Key Takeaways
+
+This project demonstrates:
+
+* Infrastructure as Code (IaC) with Terraform
+* Azure networking and compute deployment
+* Automated and reproducible infrastructure
+* Real-world cloud engineering practices
+
+---
